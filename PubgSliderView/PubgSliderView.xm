@@ -1,38 +1,25 @@
-// See http://iphonedevwiki.net/index.php/Logos
-
-#if TARGET_OS_SIMULATOR
-#error Do not support the simulator, please use the real iPhone Device.
-#endif
-
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-%hook ClassName
+@interface IOSViewController : UIViewController{
 
-+ (id)sharedInstance
-{
-	%log;
-
-	return %orig;
 }
+- (void)sliderValueChanged:(id)sender;
 
-- (void)messageWithNoReturnAndOneArgument:(id)originalArgument
-{
-	%log;
+@end
 
-	%orig(originalArgument);
-	
-	// or, for exmaple, you could use a custom value instead of the original argument: %orig(customValue);
+%hook IOSViewController
+- (void)loadView {
+%orig;
+dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
+UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width / 3 - 5, 30, [UIScreen mainScreen].bounds.size.width / 3  + 10, 20)];
+slider.minimumValue = 1;
+slider.maximumValue = 100;
+slider.value = 1;
+slider.continuous = YES;
+[slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+[self.view addSubview:slider];
+});
 }
-
-- (id)messageWithReturnAndNoArguments
-{
-	%log;
-
-	id originalReturnOfMessage = %orig;
-	
-	// for example, you could modify the original return value before returning it: [SomeOtherClass doSomethingToThisObject:originalReturnOfMessage];
-
-	return originalReturnOfMessage;
-}
-
 %end

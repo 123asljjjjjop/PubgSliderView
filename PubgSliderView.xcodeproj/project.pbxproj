@@ -20,7 +20,7 @@
 		540ACCF921F5CEBE0065FB43 /* CydiaSubstrate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CydiaSubstrate.framework; path = Library/Frameworks/CydiaSubstrate.framework; sourceTree = DEVELOPER_DIR; };
 		540ACCFE21F5CEBE0065FB43 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
 		540ACD0021F5CEBE0065FB43 /* PubgSliderView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PubgSliderView-Prefix.pch"; sourceTree = "<group>"; };
-		540ACD0121F5CEBE0065FB43 /* PubgSliderView.xm */ = {isa = PBXFileReference; lastKnownFileType = text; path = PubgSliderView.xm; sourceTree = "<group>"; };
+		540ACD0121F5CEBE0065FB43 /* PubgSliderView.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc.preprocessed; path = PubgSliderView.xm; sourceTree = "<group>"; };
 		540ACD0221F5CEBE0065FB43 /* PubgSliderView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PubgSliderView.mm; sourceTree = "<group>"; };
 		540ACD0721F5CEBE0065FB43 /* PubgSliderView.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = PubgSliderView.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/PubgSliderView.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -301,6 +301,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -311,9 +313,9 @@
 				MonkeyDevBuildPackageOnAnyBuild = NO;
 				MonkeyDevClearUiCacheOnInstall = NO;
 				MonkeyDevCopyOnBuild = NO;
-				MonkeyDevDeviceIP = "";
-				MonkeyDevDevicePassword = "";
-				MonkeyDevDevicePort = "";
+				MonkeyDevDeviceIP = 192.168.1.140;
+				MonkeyDevDevicePassword = alpine;
+				MonkeyDevDevicePort = 22;
 				MonkeyDevInstallOnAnyBuild = YES;
 				MonkeyDevInstallOnProfiling = YES;
 				MonkeyDevkillProcessOnInstall = SpringBoard;
@@ -326,6 +328,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -336,9 +340,9 @@
 				MonkeyDevBuildPackageOnAnyBuild = NO;
 				MonkeyDevClearUiCacheOnInstall = NO;
 				MonkeyDevCopyOnBuild = NO;
-				MonkeyDevDeviceIP = "";
-				MonkeyDevDevicePassword = "";
-				MonkeyDevDevicePort = "";
+				MonkeyDevDeviceIP = 192.168.1.140;
+				MonkeyDevDevicePassword = alpine;
+				MonkeyDevDevicePort = 22;
 				MonkeyDevInstallOnAnyBuild = YES;
 				MonkeyDevInstallOnProfiling = YES;
 				MonkeyDevkillProcessOnInstall = SpringBoard;

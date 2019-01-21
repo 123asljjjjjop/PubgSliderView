@@ -1,8 +1,8 @@
 Package: com.ipaapps.PubgSlider.PubgSliderView
 Name: PubgSliderView
-Version: 0.1-1
+Version: 0.1
 Description: 
-Section: System
+Section: iOS 11
 Depends: firmware (>= 5.0), mobilesubstrate
 Conflicts: 
 Replaces: 
